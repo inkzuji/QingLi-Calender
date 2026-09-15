@@ -1,0 +1,15 @@
+{
+  "originHash" : "69599b3740784aaf01259b77d835903b301cfc78469b27e52afcbb4a1889edce",
+  "pins" : [
+    {
+      "identity" : "lunarcore-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/wbx1-Ltd/LunarCore-Swift.git",
+      "state" : {
+        "revision" : "2645840e271e3223873118511ebd946be1c0ace8",
+        "version" : "1.2.0"
+      }
+    }
+  ],
+  "version" : 3
+}

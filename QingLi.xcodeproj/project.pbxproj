@@ -1,0 +1,821 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02F3D97853743FD3DEE2F5D6 /* QingLiWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8C0074BB3D2FCC11B0B17 /* QingLiWidget.swift */; };
+		09D382BB94F3F5B269F190EB /* CalendarEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53380BC49D500E25015A0A9 /* CalendarEngine.swift */; };
+		1636216B20A773441DC1C721 /* libQingLiCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0152752A4A68933F1C6D849 /* libQingLiCore.a */; };
+		1D2DCF0481700F9DD3B6ED3B /* CivilDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D3E520A2D1683B1BC949B7 /* CivilDate.swift */; };
+		29BAEDDEF22CB2DDCCF14A55 /* LunarCore in Frameworks */ = {isa = PBXBuildFile; productRef = 0EB2A8E4BA188B540492A4C2 /* LunarCore */; };
+		39440562E99D0EF910C95A8E /* HolidayProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE66BD403F13151F9E944DF /* HolidayProvider.swift */; };
+		3947F17207A288EB3CE6055F /* QingLiCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008E432CC96B3EEF2CF2C85A /* QingLiCoreTests.swift */; };
+		47F0A225B32F6FBC8511F770 /* holidays.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F17D056549035DF924009A7 /* holidays.json */; };
+		4F59A35CEC67D942027AE039 /* DateFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37BEEDF78704D105E2EA08F /* DateFormatting.swift */; };
+		55DE9262EE64067335D61B77 /* QingLiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69248F201B6BEC9D70BFA84 /* QingLiApp.swift */; };
+		6D07D6A2023389DF18685BA0 /* holidays.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F17D056549035DF924009A7 /* holidays.json */; };
+		862BC62593FA2FA73447341C /* libQingLiCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0152752A4A68933F1C6D849 /* libQingLiCore.a */; };
+		9C0D7DE563A1077A4052B83C /* holidays.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F17D056549035DF924009A7 /* holidays.json */; };
+		AC492BD404E00DB858356BB1 /* QingLiWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B4053E0D86C532BDE75119BB /* QingLiWidgetExtension.appex */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B94E102B457AF087EF351A47 /* LunarProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608EAF512168942263020284 /* LunarProvider.swift */; };
+		B99AF223A2CDB8CF61FE12F1 /* LunarCore in Frameworks */ = {isa = PBXBuildFile; productRef = 06FDE74D4FCB6F93E31E73B3 /* LunarCore */; };
+		C845F32E9C134B095F89185F /* HolidayUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C7DB050875BDA9039E3324 /* HolidayUpdate.swift */; };
+		CC0758B76806471B57A1B70E /* libQingLiCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0152752A4A68933F1C6D849 /* libQingLiCore.a */; };
+		E18B90BBBD44093EF23D6352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7B8234A6E539BDD94C4E4CB /* Assets.xcassets */; };
+		E93A5417767E4D2F3FE74BDA /* LunarCore in Frameworks */ = {isa = PBXBuildFile; productRef = 0273DD7BABE1B5E2B5B79639 /* LunarCore */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		17862C210E9EB6293FF9863C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E63E500D9A01D332BB0AB894 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28B3D3DF0D0A95A746149151;
+			remoteInfo = QingLiWidgetExtension;
+		};
+		697B7EF64056866E329BEBE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E63E500D9A01D332BB0AB894 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32BF807929755087B19EC186;
+			remoteInfo = QingLiCore;
+		};
+		C9F2E52FC1C9C0DE40FAD1BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E63E500D9A01D332BB0AB894 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32BF807929755087B19EC186;
+			remoteInfo = QingLiCore;
+		};
+		F973C0A19F595C538A70952C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E63E500D9A01D332BB0AB894 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32BF807929755087B19EC186;
+			remoteInfo = QingLiCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8B4C6939106D11A97D0EFE02 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AC492BD404E00DB858356BB1 /* QingLiWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		008E432CC96B3EEF2CF2C85A /* QingLiCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QingLiCoreTests.swift; sourceTree = "<group>"; };
+		1061FCF0A16E7CB11CE0025A /* QingLi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QingLi.entitlements; sourceTree = "<group>"; };
+		30ED36B827CA6FCAC80AFC10 /* QingLiWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QingLiWidgetExtension.entitlements; sourceTree = "<group>"; };
+		608EAF512168942263020284 /* LunarProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarProvider.swift; sourceTree = "<group>"; };
+		61C7DB050875BDA9039E3324 /* HolidayUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayUpdate.swift; sourceTree = "<group>"; };
+		66D3E520A2D1683B1BC949B7 /* CivilDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivilDate.swift; sourceTree = "<group>"; };
+		6F17D056549035DF924009A7 /* holidays.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = holidays.json; sourceTree = "<group>"; };
+		713F53F2A7EE703C5B470FD6 /* QingLiCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QingLiCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CB8C0074BB3D2FCC11B0B17 /* QingLiWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QingLiWidget.swift; sourceTree = "<group>"; };
+		9CE66BD403F13151F9E944DF /* HolidayProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayProvider.swift; sourceTree = "<group>"; };
+		B4053E0D86C532BDE75119BB /* QingLiWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QingLiWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B53380BC49D500E25015A0A9 /* CalendarEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEngine.swift; sourceTree = "<group>"; };
+		D37BEEDF78704D105E2EA08F /* DateFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatting.swift; sourceTree = "<group>"; };
+		E0152752A4A68933F1C6D849 /* libQingLiCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libQingLiCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E06B7B8D3E4698E4A0F0E7FB /* QingLi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QingLi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7B8234A6E539BDD94C4E4CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F69248F201B6BEC9D70BFA84 /* QingLiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QingLiApp.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		93C55A00FCD0F4928B411770 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1636216B20A773441DC1C721 /* libQingLiCore.a in Frameworks */,
+				E93A5417767E4D2F3FE74BDA /* LunarCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCBEC07E0A40B7C6FB950A50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				862BC62593FA2FA73447341C /* libQingLiCore.a in Frameworks */,
+				29BAEDDEF22CB2DDCCF14A55 /* LunarCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC8000BCDC059D5E3F2BA351 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC0758B76806471B57A1B70E /* libQingLiCore.a in Frameworks */,
+				B99AF223A2CDB8CF61FE12F1 /* LunarCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1C57727DF5602A3EF4468A00 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E0152752A4A68933F1C6D849 /* libQingLiCore.a */,
+				E06B7B8D3E4698E4A0F0E7FB /* QingLi.app */,
+				713F53F2A7EE703C5B470FD6 /* QingLiCoreTests.xctest */,
+				B4053E0D86C532BDE75119BB /* QingLiWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52AF6E3EA5472872C8CDC238 = {
+			isa = PBXGroup;
+			children = (
+				A111D2E48277C16478C54F27 /* QingLi */,
+				ECA84B6DAA418764A6C0DC96 /* QingLiCore */,
+				CB722F0FB43C925A62E24FBA /* QingLiCoreTests */,
+				E886B20C9ED7C70BDB3674E7 /* QingLiWidgetExtension */,
+				991B12B5AB46041C1746FB6D /* Resources */,
+				1C57727DF5602A3EF4468A00 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		991B12B5AB46041C1746FB6D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6F17D056549035DF924009A7 /* holidays.json */,
+			);
+			name = Resources;
+			path = Sources/QingLiCore/Resources;
+			sourceTree = "<group>";
+		};
+		A111D2E48277C16478C54F27 /* QingLi */ = {
+			isa = PBXGroup;
+			children = (
+				E7B8234A6E539BDD94C4E4CB /* Assets.xcassets */,
+				1061FCF0A16E7CB11CE0025A /* QingLi.entitlements */,
+				F69248F201B6BEC9D70BFA84 /* QingLiApp.swift */,
+			);
+			name = QingLi;
+			path = Sources/QingLi;
+			sourceTree = "<group>";
+		};
+		CB722F0FB43C925A62E24FBA /* QingLiCoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				008E432CC96B3EEF2CF2C85A /* QingLiCoreTests.swift */,
+			);
+			name = QingLiCoreTests;
+			path = Tests/QingLiCoreTests;
+			sourceTree = "<group>";
+		};
+		E886B20C9ED7C70BDB3674E7 /* QingLiWidgetExtension */ = {
+			isa = PBXGroup;
+			children = (
+				9CB8C0074BB3D2FCC11B0B17 /* QingLiWidget.swift */,
+				30ED36B827CA6FCAC80AFC10 /* QingLiWidgetExtension.entitlements */,
+			);
+			name = QingLiWidgetExtension;
+			path = Sources/QingLiWidgetExtension;
+			sourceTree = "<group>";
+		};
+		ECA84B6DAA418764A6C0DC96 /* QingLiCore */ = {
+			isa = PBXGroup;
+			children = (
+				B53380BC49D500E25015A0A9 /* CalendarEngine.swift */,
+				66D3E520A2D1683B1BC949B7 /* CivilDate.swift */,
+				D37BEEDF78704D105E2EA08F /* DateFormatting.swift */,
+				9CE66BD403F13151F9E944DF /* HolidayProvider.swift */,
+				61C7DB050875BDA9039E3324 /* HolidayUpdate.swift */,
+				608EAF512168942263020284 /* LunarProvider.swift */,
+			);
+			name = QingLiCore;
+			path = Sources/QingLiCore;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		28B3D3DF0D0A95A746149151 /* QingLiWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6BF42C98F5C132F444F312F /* Build configuration list for PBXNativeTarget "QingLiWidgetExtension" */;
+			buildPhases = (
+				ED2FAE220ABC886A2E377DB1 /* Sources */,
+				554775F81449E40C0F8E936A /* Resources */,
+				FC8000BCDC059D5E3F2BA351 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6DA26E6CA71FF7166E6CFD83 /* PBXTargetDependency */,
+			);
+			name = QingLiWidgetExtension;
+			packageProductDependencies = (
+				06FDE74D4FCB6F93E31E73B3 /* LunarCore */,
+			);
+			productName = QingLiWidgetExtension;
+			productReference = B4053E0D86C532BDE75119BB /* QingLiWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		32BF807929755087B19EC186 /* QingLiCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16486738791369CBECC17C9E /* Build configuration list for PBXNativeTarget "QingLiCore" */;
+			buildPhases = (
+				8D0DE863357CE35C7EEF1267 /* Sources */,
+				C24B77006681C533217EB7E3 /* Copy Swift Objective-C Interface Header */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C5A092800F1216F2E999400C /* PBXTargetDependency */,
+			);
+			name = QingLiCore;
+			packageProductDependencies = (
+				A3F9715BCFCD88B9EF306A15 /* LunarCore */,
+			);
+			productName = QingLiCore;
+			productReference = E0152752A4A68933F1C6D849 /* libQingLiCore.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		81DAC4B11DC9342A27BBD9E6 /* QingLiCoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE41DAA9089CE01A74D2B55B /* Build configuration list for PBXNativeTarget "QingLiCoreTests" */;
+			buildPhases = (
+				4429EFC544F2958B7A808475 /* Sources */,
+				8DC227D6263681A9C2B3BFDF /* Resources */,
+				93C55A00FCD0F4928B411770 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2B8F29C307C1249DBB1D04A6 /* PBXTargetDependency */,
+			);
+			name = QingLiCoreTests;
+			packageProductDependencies = (
+				0273DD7BABE1B5E2B5B79639 /* LunarCore */,
+			);
+			productName = QingLiCoreTests;
+			productReference = 713F53F2A7EE703C5B470FD6 /* QingLiCoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C7FC2EA4A79A42FE6F103A09 /* QingLi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33C318D5950705CB6E8686F7 /* Build configuration list for PBXNativeTarget "QingLi" */;
+			buildPhases = (
+				A8153DAC15457A59561B6340 /* Sources */,
+				EBE9134BFDE49FC5F43B0A78 /* Resources */,
+				DCBEC07E0A40B7C6FB950A50 /* Frameworks */,
+				8B4C6939106D11A97D0EFE02 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3A87D263E840553E61E50B6 /* PBXTargetDependency */,
+				503587E0F32BE24D6EDACC1A /* PBXTargetDependency */,
+			);
+			name = QingLi;
+			packageProductDependencies = (
+				0EB2A8E4BA188B540492A4C2 /* LunarCore */,
+			);
+			productName = QingLi;
+			productReference = E06B7B8D3E4698E4A0F0E7FB /* QingLi.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E63E500D9A01D332BB0AB894 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2630;
+				TargetAttributes = {
+					28B3D3DF0D0A95A746149151 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					32BF807929755087B19EC186 = {
+						DevelopmentTeam = "";
+					};
+					81DAC4B11DC9342A27BBD9E6 = {
+						DevelopmentTeam = "";
+					};
+					C7FC2EA4A79A42FE6F103A09 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 8FE910727280BD47599C0C9B /* Build configuration list for PBXProject "QingLi" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 52AF6E3EA5472872C8CDC238;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				9AD8FF6042481257921B6ECC /* XCRemoteSwiftPackageReference "LunarCore-Swift" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 1C57727DF5602A3EF4468A00 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				32BF807929755087B19EC186 /* QingLiCore */,
+				C7FC2EA4A79A42FE6F103A09 /* QingLi */,
+				28B3D3DF0D0A95A746149151 /* QingLiWidgetExtension */,
+				81DAC4B11DC9342A27BBD9E6 /* QingLiCoreTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		554775F81449E40C0F8E936A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47F0A225B32F6FBC8511F770 /* holidays.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DC227D6263681A9C2B3BFDF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C0D7DE563A1077A4052B83C /* holidays.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBE9134BFDE49FC5F43B0A78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E18B90BBBD44093EF23D6352 /* Assets.xcassets in Resources */,
+				6D07D6A2023389DF18685BA0 /* holidays.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C24B77006681C533217EB7E3 /* Copy Swift Objective-C Interface Header */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(DERIVED_SOURCES_DIR)/$(SWIFT_OBJC_INTERFACE_HEADER_NAME)",
+			);
+			name = "Copy Swift Objective-C Interface Header";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/include/$(PRODUCT_MODULE_NAME)/$(SWIFT_OBJC_INTERFACE_HEADER_NAME)",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ditto \"${SCRIPT_INPUT_FILE_0}\" \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4429EFC544F2958B7A808475 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3947F17207A288EB3CE6055F /* QingLiCoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D0DE863357CE35C7EEF1267 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09D382BB94F3F5B269F190EB /* CalendarEngine.swift in Sources */,
+				1D2DCF0481700F9DD3B6ED3B /* CivilDate.swift in Sources */,
+				4F59A35CEC67D942027AE039 /* DateFormatting.swift in Sources */,
+				39440562E99D0EF910C95A8E /* HolidayProvider.swift in Sources */,
+				C845F32E9C134B095F89185F /* HolidayUpdate.swift in Sources */,
+				B94E102B457AF087EF351A47 /* LunarProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8153DAC15457A59561B6340 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55DE9262EE64067335D61B77 /* QingLiApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED2FAE220ABC886A2E377DB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02F3D97853743FD3DEE2F5D6 /* QingLiWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2B8F29C307C1249DBB1D04A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 32BF807929755087B19EC186 /* QingLiCore */;
+			targetProxy = 697B7EF64056866E329BEBE8 /* PBXContainerItemProxy */;
+		};
+		503587E0F32BE24D6EDACC1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28B3D3DF0D0A95A746149151 /* QingLiWidgetExtension */;
+			targetProxy = 17862C210E9EB6293FF9863C /* PBXContainerItemProxy */;
+		};
+		6DA26E6CA71FF7166E6CFD83 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 32BF807929755087B19EC186 /* QingLiCore */;
+			targetProxy = F973C0A19F595C538A70952C /* PBXContainerItemProxy */;
+		};
+		C5A092800F1216F2E999400C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = A3F9715BCFCD88B9EF306A15 /* LunarCore */;
+		};
+		D3A87D263E840553E61E50B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 32BF807929755087B19EC186 /* QingLiCore */;
+			targetProxy = C9F2E52FC1C9C0DE40FAD1BA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		020D66B125F3CE3177F1F407 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.qingli.core;
+				PRODUCT_NAME = QingLiCore;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		227CA6F2DE59B226B650D8E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/QingLiCoreTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.qingli.tests;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		29BF5AD49144587C61F738A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.qingli.core;
+				PRODUCT_NAME = QingLiCore;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5837A91D3EFD9000B25279C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Sources/QingLiWidgetExtension/QingLiWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Sources/QingLiWidgetExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.qingli.app.widget;
+				PRODUCT_NAME = QingLiWidgetExtension;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7FDB0DDD21D8ADF6C0542A9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Sources/QingLiWidgetExtension/QingLiWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Sources/QingLiWidgetExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.qingli.app.widget;
+				PRODUCT_NAME = QingLiWidgetExtension;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		86CB206DF6A173F51B6884F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sources/QingLi/QingLi.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Sources/QingLi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.qingli.app;
+				PRODUCT_NAME = QingLi;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C91C11B0960C27F81E82D5BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		E14D08AF621A65B333F17472 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		EFD63F384DFA9D8FAE477808 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/QingLiCoreTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.qingli.tests;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FD155258B1801B1FAD84763A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sources/QingLi/QingLi.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Sources/QingLi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.qingli.app;
+				PRODUCT_NAME = QingLi;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		16486738791369CBECC17C9E /* Build configuration list for PBXNativeTarget "QingLiCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29BF5AD49144587C61F738A4 /* Debug */,
+				020D66B125F3CE3177F1F407 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		33C318D5950705CB6E8686F7 /* Build configuration list for PBXNativeTarget "QingLi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD155258B1801B1FAD84763A /* Debug */,
+				86CB206DF6A173F51B6884F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8FE910727280BD47599C0C9B /* Build configuration list for PBXProject "QingLi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E14D08AF621A65B333F17472 /* Debug */,
+				C91C11B0960C27F81E82D5BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A6BF42C98F5C132F444F312F /* Build configuration list for PBXNativeTarget "QingLiWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5837A91D3EFD9000B25279C2 /* Debug */,
+				7FDB0DDD21D8ADF6C0542A9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EE41DAA9089CE01A74D2B55B /* Build configuration list for PBXNativeTarget "QingLiCoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFD63F384DFA9D8FAE477808 /* Debug */,
+				227CA6F2DE59B226B650D8E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9AD8FF6042481257921B6ECC /* XCRemoteSwiftPackageReference "LunarCore-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/wbx1-Ltd/LunarCore-Swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0273DD7BABE1B5E2B5B79639 /* LunarCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9AD8FF6042481257921B6ECC /* XCRemoteSwiftPackageReference "LunarCore-Swift" */;
+			productName = LunarCore;
+		};
+		06FDE74D4FCB6F93E31E73B3 /* LunarCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9AD8FF6042481257921B6ECC /* XCRemoteSwiftPackageReference "LunarCore-Swift" */;
+			productName = LunarCore;
+		};
+		0EB2A8E4BA188B540492A4C2 /* LunarCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9AD8FF6042481257921B6ECC /* XCRemoteSwiftPackageReference "LunarCore-Swift" */;
+			productName = LunarCore;
+		};
+		A3F9715BCFCD88B9EF306A15 /* LunarCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9AD8FF6042481257921B6ECC /* XCRemoteSwiftPackageReference "LunarCore-Swift" */;
+			productName = LunarCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = E63E500D9A01D332BB0AB894 /* Project object */;
+}
