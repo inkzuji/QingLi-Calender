@@ -1,0 +1,63 @@
+name: 发布 Release
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: macos-26
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 构建 Release 应用
+        run: |
+          xcodebuild \
+            -project QingLi.xcodeproj \
+            -scheme QingLi \
+            -configuration Release \
+            -derivedDataPath "$RUNNER_TEMP/QingLi-derived-data" \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      - name: 打包应用
+        id: package
+        run: |
+          set -euo pipefail
+
+          version=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' Sources/QingLi/Info.plist)
+          tag="v${version}"
+          asset="QingLi-${tag}-macos.zip"
+
+          mkdir -p dist
+          ditto -c -k --sequesterRsrc --keepParent \
+            "$RUNNER_TEMP/QingLi-derived-data/Build/Products/Release/QingLi.app" \
+            "dist/${asset}"
+
+          echo "tag=${tag}" >> "$GITHUB_OUTPUT"
+          echo "asset=${asset}" >> "$GITHUB_OUTPUT"
+
+      - name: 创建或更新 GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.package.outputs.tag }}
+          RELEASE_ASSET: ${{ steps.package.outputs.asset }}
+        working-directory: dist
+        run: |
+          set -euo pipefail
+
+          if gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release upload "$RELEASE_TAG" "$RELEASE_ASSET" --clobber --repo "$GITHUB_REPOSITORY"
+          else
+            gh release create "$RELEASE_TAG" "$RELEASE_ASSET" \
+              --target "$GITHUB_SHA" \
+              --title "$RELEASE_TAG" \
+              --generate-notes \
+              --repo "$GITHUB_REPOSITORY"
+          fi
