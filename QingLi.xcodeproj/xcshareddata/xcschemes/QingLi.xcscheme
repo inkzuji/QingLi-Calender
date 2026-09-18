@@ -64,6 +64,17 @@
                ReferencedContainer = "container:QingLi.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "48D9AC33B38AB83ADEE096C8"
+               BuildableName = "QingLiTests.xctest"
+               BlueprintName = "QingLiTests"
+               ReferencedContainer = "container:QingLi.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <CommandLineArguments>
       </CommandLineArguments>
