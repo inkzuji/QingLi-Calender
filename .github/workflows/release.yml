@@ -33,11 +33,14 @@ jobs:
 
           version=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' Sources/QingLi/Info.plist)
           tag="v${version}"
-          asset="QingLi-${tag}-macos.zip"
+          asset="清历-${tag}-macos.zip"
 
           mkdir -p dist
-          ditto -c -k --sequesterRsrc --keepParent \
+          ditto \
             "$RUNNER_TEMP/QingLi-derived-data/Build/Products/Release/QingLi.app" \
+            "dist/清历.app"
+          ditto -c -k --sequesterRsrc --keepParent \
+            "dist/清历.app" \
             "dist/${asset}"
 
           echo "tag=${tag}" >> "$GITHUB_OUTPUT"

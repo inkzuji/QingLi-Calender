@@ -78,6 +78,8 @@ final class MenuBarDateController: NSObject, ObservableObject {
 }
 
 struct QingLiCalendarView: View {
+    private static let popupScale: CGFloat = 0.8
+
     private enum FocusTarget: Hashable {
         case monthTitle
         case day(CivilDate)
@@ -151,6 +153,8 @@ struct QingLiCalendarView: View {
         }
         .shadow(color: Color(red: 31 / 255, green: 66 / 255, blue: 108 / 255).opacity(0.18), radius: 35, y: 16)
         .shadow(color: Color(red: 17 / 255, green: 55 / 255, blue: 90 / 255).opacity(0.07), radius: 4.5, y: 2)
+        .scaleEffect(Self.popupScale, anchor: .top)
+        .frame(width: 484 * Self.popupScale, height: 602 * Self.popupScale, alignment: .top)
         .onKeyPress { press in
             guard press.modifiers.contains(.control),
                   !press.modifiers.contains(.command),

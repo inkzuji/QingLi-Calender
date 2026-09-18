@@ -41,8 +41,8 @@ targets:
       properties:
         CFBundleDisplayName: 清历
         CFBundleName: 清历
-        CFBundleShortVersionString: "1.1"
-        CFBundleVersion: "2"
+        CFBundleShortVersionString: "1.2"
+        CFBundleVersion: "3"
         LSUIElement: true
     dependencies:
       - target: QingLiCore
@@ -72,8 +72,8 @@ targets:
       properties:
         CFBundleDisplayName: 清历
         CFBundleName: 清历
-        CFBundleShortVersionString: "1.1"
-        CFBundleVersion: "2"
+        CFBundleShortVersionString: "1.2"
+        CFBundleVersion: "3"
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
     dependencies:
