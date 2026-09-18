@@ -27,6 +27,7 @@
 		CC0758B76806471B57A1B70E /* libQingLiCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0152752A4A68933F1C6D849 /* libQingLiCore.a */; };
 		E18B90BBBD44093EF23D6352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7B8234A6E539BDD94C4E4CB /* Assets.xcassets */; };
 		E93A5417767E4D2F3FE74BDA /* LunarCore in Frameworks */ = {isa = PBXBuildFile; productRef = 0273DD7BABE1B5E2B5B79639 /* LunarCore */; };
+		EC3F1596979694392DBCC597 /* MenuBarDateControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D5CDCEED70EC5302E8870A /* MenuBarDateControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,13 @@
 			remoteGlobalIDString = 32BF807929755087B19EC186;
 			remoteInfo = QingLiCore;
 		};
+		FD78758CE1C904B2A5F97FEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E63E500D9A01D332BB0AB894 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C7FC2EA4A79A42FE6F103A09;
+			remoteInfo = QingLi;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -77,6 +85,8 @@
 /* Begin PBXFileReference section */
 		008E432CC96B3EEF2CF2C85A /* QingLiCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QingLiCoreTests.swift; sourceTree = "<group>"; };
 		1061FCF0A16E7CB11CE0025A /* QingLi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QingLi.entitlements; sourceTree = "<group>"; };
+		19D5CDCEED70EC5302E8870A /* MenuBarDateControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarDateControllerTests.swift; sourceTree = "<group>"; };
+		29845705058684D38DFD92EF /* QingLiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QingLiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30ED36B827CA6FCAC80AFC10 /* QingLiWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QingLiWidgetExtension.entitlements; sourceTree = "<group>"; };
 		608EAF512168942263020284 /* LunarProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarProvider.swift; sourceTree = "<group>"; };
 		61C7DB050875BDA9039E3324 /* HolidayUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayUpdate.swift; sourceTree = "<group>"; };
@@ -125,12 +135,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04D5B6836A899D247D8EAFB2 /* QingLiTests */ = {
+			isa = PBXGroup;
+			children = (
+				19D5CDCEED70EC5302E8870A /* MenuBarDateControllerTests.swift */,
+			);
+			name = QingLiTests;
+			path = Tests/QingLiTests;
+			sourceTree = "<group>";
+		};
 		1C57727DF5602A3EF4468A00 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				E0152752A4A68933F1C6D849 /* libQingLiCore.a */,
 				E06B7B8D3E4698E4A0F0E7FB /* QingLi.app */,
 				713F53F2A7EE703C5B470FD6 /* QingLiCoreTests.xctest */,
+				29845705058684D38DFD92EF /* QingLiTests.xctest */,
 				B4053E0D86C532BDE75119BB /* QingLiWidgetExtension.appex */,
 			);
 			name = Products;
@@ -142,6 +162,7 @@
 				A111D2E48277C16478C54F27 /* QingLi */,
 				ECA84B6DAA418764A6C0DC96 /* QingLiCore */,
 				CB722F0FB43C925A62E24FBA /* QingLiCoreTests */,
+				04D5B6836A899D247D8EAFB2 /* QingLiTests */,
 				E886B20C9ED7C70BDB3674E7 /* QingLiWidgetExtension */,
 				991B12B5AB46041C1746FB6D /* Resources */,
 				1C57727DF5602A3EF4468A00 /* Products */,
@@ -245,6 +266,24 @@
 			productReference = E0152752A4A68933F1C6D849 /* libQingLiCore.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		48D9AC33B38AB83ADEE096C8 /* QingLiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42D6ABA07DC863EC5BA9D709 /* Build configuration list for PBXNativeTarget "QingLiTests" */;
+			buildPhases = (
+				56421355FE47A5A42674308F /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D906D5E2E9A95A99A10563B5 /* PBXTargetDependency */,
+			);
+			name = QingLiTests;
+			packageProductDependencies = (
+			);
+			productName = QingLiTests;
+			productReference = 29845705058684D38DFD92EF /* QingLiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		81DAC4B11DC9342A27BBD9E6 /* QingLiCoreTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE41DAA9089CE01A74D2B55B /* Build configuration list for PBXNativeTarget "QingLiCoreTests" */;
@@ -305,6 +344,9 @@
 					32BF807929755087B19EC186 = {
 						DevelopmentTeam = "";
 					};
+					48D9AC33B38AB83ADEE096C8 = {
+						DevelopmentTeam = "";
+					};
 					81DAC4B11DC9342A27BBD9E6 = {
 						DevelopmentTeam = "";
 					};
@@ -335,6 +377,7 @@
 				C7FC2EA4A79A42FE6F103A09 /* QingLi */,
 				28B3D3DF0D0A95A746149151 /* QingLiWidgetExtension */,
 				81DAC4B11DC9342A27BBD9E6 /* QingLiCoreTests */,
+				48D9AC33B38AB83ADEE096C8 /* QingLiTests */,
 			);
 		};
 /* End PBXProject section */
@@ -395,6 +438,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		56421355FE47A5A42674308F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC3F1596979694392DBCC597 /* MenuBarDateControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D0DE863357CE35C7EEF1267 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -451,6 +502,11 @@
 			target = 32BF807929755087B19EC186 /* QingLiCore */;
 			targetProxy = C9F2E52FC1C9C0DE40FAD1BA /* PBXContainerItemProxy */;
 		};
+		D906D5E2E9A95A99A10563B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C7FC2EA4A79A42FE6F103A09 /* QingLi */;
+			targetProxy = FD78758CE1C904B2A5F97FEA /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -468,6 +524,23 @@
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
+		};
+		1F89DB71AEB7715315C66F74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/QingLiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.qingli.app-tests";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QingLi.app/Contents/MacOS/QingLi";
+			};
+			name = Debug;
 		};
 		227CA6F2DE59B226B650D8E3 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -711,6 +784,23 @@
 			};
 			name = Debug;
 		};
+		FB9AB78C83189F752355C2B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/QingLiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.qingli.app-tests";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QingLi.app/Contents/MacOS/QingLi";
+			};
+			name = Release;
+		};
 		FD155258B1801B1FAD84763A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -750,6 +840,15 @@
 			buildConfigurations = (
 				FD155258B1801B1FAD84763A /* Debug */,
 				86CB206DF6A173F51B6884F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		42D6ABA07DC863EC5BA9D709 /* Build configuration list for PBXNativeTarget "QingLiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F89DB71AEB7715315C66F74 /* Debug */,
+				FB9AB78C83189F752355C2B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

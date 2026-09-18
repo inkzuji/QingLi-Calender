@@ -33,25 +33,33 @@ struct QingLiApp: App {
 }
 
 @MainActor
-private final class MenuBarDateController: NSObject, ObservableObject {
+final class MenuBarDateController: NSObject, ObservableObject {
     @Published private(set) var day: Int
     private var midnightTimer: Timer?
 
-    override init() {
+    init(
+        notificationCenter: NotificationCenter = .default,
+        workspaceNotificationCenter: NotificationCenter = NSWorkspace.shared.notificationCenter
+    ) {
         day = CivilDate(Date())?.day ?? 1
         super.init()
-        let center = NotificationCenter.default
-        center.addObserver(self, selector: #selector(refresh), name: .NSCalendarDayChanged, object: nil)
-        center.addObserver(self, selector: #selector(refresh), name: .NSSystemClockDidChange, object: nil)
-        center.addObserver(self, selector: #selector(refresh), name: .NSSystemTimeZoneDidChange, object: nil)
-        center.addObserver(self, selector: #selector(refresh), name: NSApplication.didBecomeActiveNotification, object: nil)
-        NSWorkspace.shared.notificationCenter.addObserver(
+        notificationCenter.addObserver(self, selector: #selector(handleRefreshNotification(_:)), name: .NSCalendarDayChanged, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(handleRefreshNotification(_:)), name: .NSSystemClockDidChange, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(handleRefreshNotification(_:)), name: .NSSystemTimeZoneDidChange, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(handleRefreshNotification(_:)), name: NSApplication.didBecomeActiveNotification, object: nil)
+        workspaceNotificationCenter.addObserver(
             self,
-            selector: #selector(refresh),
+            selector: #selector(handleRefreshNotification(_:)),
             name: NSWorkspace.didWakeNotification,
             object: nil
         )
         scheduleMidnightRefresh()
+    }
+
+    @objc nonisolated private func handleRefreshNotification(_: Notification) {
+        Task { @MainActor [weak self] in
+            self?.refresh()
+        }
     }
 
     @objc private func refresh() {

@@ -41,6 +41,7 @@ targets:
       properties:
         CFBundleDisplayName: 清历
         CFBundleName: 清历
+        CFBundleShortVersionString: "1.1"
         CFBundleVersion: "2"
         LSUIElement: true
     dependencies:
@@ -71,6 +72,7 @@ targets:
       properties:
         CFBundleDisplayName: 清历
         CFBundleName: 清历
+        CFBundleShortVersionString: "1.1"
         CFBundleVersion: "2"
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
@@ -102,6 +104,20 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.qingli.tests
+  QingLiTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: Tests/QingLiTests
+        excludes:
+          - Info.plist
+    info:
+      path: Tests/QingLiTests/Info.plist
+    dependencies:
+      - target: QingLi
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.qingli.app-tests
 schemes:
   QingLi:
     build:
@@ -111,3 +127,4 @@ schemes:
     test:
       targets:
         - QingLiCoreTests
+        - QingLiTests
