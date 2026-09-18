@@ -33,7 +33,7 @@ jobs:
 
           version=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' Sources/QingLi/Info.plist)
           tag="v${version}"
-          asset="清历-${tag}-macos.zip"
+          asset="QingLi-${tag}-macos.zip"
 
           mkdir -p dist
           ditto \
