@@ -123,9 +123,6 @@ final class MenuBarDateController: NSObject, ObservableObject {
 }
 
 struct QingLiCalendarView: View {
-    private static let designSize = CGSize(width: 484, height: 602)
-    private static let displayScale: CGFloat = 0.9
-
     private enum FocusTarget: Hashable {
         case monthTitle
         case day(CivilDate)
@@ -162,16 +159,16 @@ struct QingLiCalendarView: View {
         ZStack(alignment: .top) {
             VStack(spacing: 0) {
                 header
-                    .padding(.bottom, 23)
+                    .padding(.bottom, 21)
                 weekdayHeader
-                    .padding(.bottom, 6)
+                    .padding(.bottom, 5)
                 calendarGrid
                 compactDetail
-                    .padding(.top, 15)
+                    .padding(.top, 14)
             }
-            .padding(.top, 26)
-            .padding(.horizontal, 26)
-            .padding(.bottom, 17)
+            .padding(.top, 23)
+            .padding(.horizontal, 24)
+            .padding(.bottom, 15)
 
             if isMonthPickerPresented {
                 MonthPicker(
@@ -183,28 +180,24 @@ struct QingLiCalendarView: View {
                         focusedTarget = .day(date)
                     }
                 )
-                .padding(.horizontal, 26)
-                .padding(.top, 77)
+                .padding(.horizontal, 24)
+                .padding(.top, 69)
                 .transition(.opacity.combined(with: .move(edge: .top)))
             }
         }
+        // 直接按最终尺寸排版，避免整体缩放在 1× 屏幕上使文字边缘发虚。
+        .font(.system(size: 11.7))
         .foregroundStyle(palette.ink)
-        .frame(width: Self.designSize.width, height: Self.designSize.height, alignment: .top)
+        .frame(width: 436, height: 542, alignment: .top)
         .background(palette.glass)
         .background(.ultraThinMaterial)
-        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .clipShape(RoundedRectangle(cornerRadius: 18))
         .overlay {
-            RoundedRectangle(cornerRadius: 20)
+            RoundedRectangle(cornerRadius: 18)
                 .stroke(palette.border, lineWidth: 1)
         }
-        .shadow(color: Color(red: 31 / 255, green: 66 / 255, blue: 108 / 255).opacity(0.18), radius: 35, y: 16)
-        .shadow(color: Color(red: 17 / 255, green: 55 / 255, blue: 90 / 255).opacity(0.07), radius: 4.5, y: 2)
-        .scaleEffect(Self.displayScale, anchor: .topLeading)
-        .frame(
-            width: Self.designSize.width * Self.displayScale,
-            height: Self.designSize.height * Self.displayScale,
-            alignment: .topLeading
-        )
+        .shadow(color: Color(red: 31 / 255, green: 66 / 255, blue: 108 / 255).opacity(0.18), radius: 32, y: 14)
+        .shadow(color: Color(red: 17 / 255, green: 55 / 255, blue: 90 / 255).opacity(0.07), radius: 4, y: 2)
         .onKeyPress { press in
             guard press.modifiers.contains(.control),
                   !press.modifiers.contains(.command),
@@ -232,13 +225,13 @@ struct QingLiCalendarView: View {
     }
 
     private var header: some View {
-        HStack(spacing: 10) {
+        HStack(spacing: 9) {
             Button {
                 isMonthPickerPresented.toggle()
             } label: {
                 Text(verbatim: "\(displayedMonth.year)年\(displayedMonth.month)月")
-                    .font(.system(size: 24, weight: .semibold))
-                    .tracking(-0.75)
+                    .font(.system(size: 21.6, weight: .semibold))
+                    .tracking(-0.675)
                     .foregroundStyle(isMonthTitleHovered ? palette.blue : palette.ink)
                     .padding(.vertical, 3)
             }
@@ -249,10 +242,10 @@ struct QingLiCalendarView: View {
 
             Spacer()
 
-            HStack(spacing: 6) {
+            HStack(spacing: 5) {
                 Button { changeMonth(by: -1) } label: {
                     Image(systemName: "chevron.left")
-                        .frame(width: 32, height: 32)
+                        .frame(width: 29, height: 29)
                 }
                 .buttonStyle(QingLiIconButtonStyle(palette: palette))
                 .disabled(!canChangeMonth(by: -1))
@@ -260,7 +253,7 @@ struct QingLiCalendarView: View {
 
                 Button { changeMonth(by: 1) } label: {
                     Image(systemName: "chevron.right")
-                        .frame(width: 32, height: 32)
+                        .frame(width: 29, height: 29)
                 }
                 .buttonStyle(QingLiIconButtonStyle(palette: palette))
                 .disabled(!canChangeMonth(by: 1))
@@ -270,43 +263,43 @@ struct QingLiCalendarView: View {
                     returnToToday()
                 } label: {
                     Text("今天")
-                        .font(.system(size: 15))
-                        .padding(.horizontal, 14)
-                        .frame(height: 35)
+                        .font(.system(size: 13.5))
+                        .padding(.horizontal, 13)
+                        .frame(height: 32)
                         .background(
                             isTodayButtonHovered
                                 ? Color(red: 38 / 255, green: 112 / 255, blue: 217 / 255).opacity(0.16)
                                 : palette.hover,
-                            in: RoundedRectangle(cornerRadius: 9)
+                            in: RoundedRectangle(cornerRadius: 8)
                         )
                 }
                 .buttonStyle(.plain)
-                .padding(.leading, 6)
+                .padding(.leading, 5)
                 .onHover { isTodayButtonHovered = $0 }
                 .keyboardShortcut("t", modifiers: .command)
                 .accessibilityHint("快捷键 Command T")
             }
         }
-        .frame(height: 39)
+        .frame(height: 35)
     }
 
     private var weekdayHeader: some View {
         LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 4), count: 7), spacing: 0) {
             ForEach(["一", "二", "三", "四", "五", "六", "日"], id: \.self) { weekday in
                 Text(weekday)
-                    .font(.system(size: 14))
+                    .font(.system(size: 12.6))
                     .foregroundStyle(palette.muted)
                     .opacity(weekday == "六" || weekday == "日" ? 0.85 : 1)
                     .frame(maxWidth: .infinity)
                     .accessibilityLabel("星期\(weekday)")
             }
         }
-        .frame(height: 34, alignment: .top)
+        .frame(height: 31, alignment: .top)
     }
 
     private var calendarGrid: some View {
         let columns = Array(repeating: GridItem(.flexible(), spacing: 4), count: 7)
-        return LazyVGrid(columns: columns, spacing: 8) {
+        return LazyVGrid(columns: columns, spacing: 7) {
             ForEach(month.days) { day in
                 let information = holidayData.dateService.information(for: day.date)
                 CalendarDayButton(
@@ -341,21 +334,21 @@ struct QingLiCalendarView: View {
 
     private var compactDetail: some View {
         let information = holidayData.dateService.information(for: selectedDate)
-        return HStack(spacing: 12) {
+        return HStack(spacing: 11) {
             Text(information.lunar.map { "农历\($0.fullDate)" } ?? "农历数据超出支持范围")
-                .font(.system(size: 16))
+                .font(.system(size: 14.4))
                 .foregroundStyle(palette.muted)
                 .lineLimit(1)
             Spacer()
-            HStack(spacing: 6) {
+            HStack(spacing: 5) {
                 Button {
                     NSApplication.shared.activate(ignoringOtherApps: true)
                     openWindow(id: "holiday-update")
                 } label: {
                     Image(systemName: "arrow.clockwise")
-                        .font(.system(size: 18, weight: .medium))
+                        .font(.system(size: 16.2, weight: .medium))
                         .foregroundStyle(palette.blue)
-                        .frame(width: 32, height: 32)
+                        .frame(width: 29, height: 29)
                 }
                 .buttonStyle(QingLiIconButtonStyle(palette: palette))
                 .help("节假日更新")
@@ -364,19 +357,19 @@ struct QingLiCalendarView: View {
                     NSApplication.shared.terminate(nil)
                 } label: {
                     Label("退出清历", systemImage: "power")
-                        .font(.system(size: 12))
+                        .font(.system(size: 10.8))
                         .foregroundStyle(palette.muted)
                         .padding(.horizontal, 5)
-                        .frame(height: 31)
-                        .background(isQuitButtonHovered ? palette.hover : .clear, in: RoundedRectangle(cornerRadius: 7))
+                        .frame(height: 28)
+                        .background(isQuitButtonHovered ? palette.hover : .clear, in: RoundedRectangle(cornerRadius: 6))
                 }
                 .buttonStyle(.plain)
                 .onHover { isQuitButtonHovered = $0 }
                 .accessibilityLabel("退出清历")
             }
         }
-        .padding(.top, 21)
-        .frame(height: 54, alignment: .top)
+        .padding(.top, 19)
+        .frame(height: 49, alignment: .top)
         .overlay(alignment: .top) {
             Rectangle()
                 .fill(palette.line)
@@ -451,25 +444,25 @@ private struct CalendarDayButton: View {
             ZStack {
                 VStack(spacing: 0) {
                     Text("\(day.date.day)")
-                        .font(.system(size: 18, weight: .medium))
+                        .font(.system(size: 16.2, weight: .medium))
                         .foregroundStyle(numberColor)
                     Text(secondaryLabel)
-                        .font(.system(size: 12))
+                        .font(.system(size: 10.8))
                         .foregroundStyle(secondaryColor)
-                        .padding(.top, 7)
+                        .padding(.top, 6)
                         .lineLimit(1)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 if let holiday = information.holiday {
                     Text(holiday.kind.label)
-                        .font(.system(size: 10))
+                        .font(.system(size: 9))
                         .foregroundStyle(markColor)
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-                        .padding(.top, isSelected ? 7 : 4)
+                        .padding(.top, isSelected ? 6 : 4)
                         .padding(.trailing, isSelected ? 4 : 2)
                 }
             }
-            .frame(height: 58)
+            .frame(height: 52)
         }
         .buttonStyle(CalendarDayButtonStyle(
             isToday: isToday,
@@ -530,13 +523,13 @@ private struct CalendarDayButtonStyle: ButtonStyle {
                     Circle()
                         .stroke(isToday ? palette.blue : .clear, lineWidth: 1)
                 } else {
-                    RoundedRectangle(cornerRadius: 13)
+                    RoundedRectangle(cornerRadius: 12)
                         .stroke(isToday ? palette.blue : .clear, lineWidth: 1.5)
                 }
             }
-            .contentShape(RoundedRectangle(cornerRadius: 13))
+            .contentShape(RoundedRectangle(cornerRadius: 12))
             .opacity(isOutsideMonth && !isSelected ? 0.62 : 1)
-            .shadow(color: isSelected ? palette.blue.opacity(0.15) : .clear, radius: 3.5, y: 3)
+            .shadow(color: isSelected ? palette.blue.opacity(0.15) : .clear, radius: 3, y: 3)
     }
 
     @ViewBuilder
@@ -544,11 +537,11 @@ private struct CalendarDayButtonStyle: ButtonStyle {
         if isSelected {
             Circle().fill(palette.selection)
         } else if configuration.isPressed || isHovered {
-            RoundedRectangle(cornerRadius: 13).fill(palette.hover)
+            RoundedRectangle(cornerRadius: 12).fill(palette.hover)
         } else if isToday {
-            RoundedRectangle(cornerRadius: 13).fill(palette.todayBackground)
+            RoundedRectangle(cornerRadius: 12).fill(palette.todayBackground)
         } else {
-            RoundedRectangle(cornerRadius: 13).fill(.clear)
+            RoundedRectangle(cornerRadius: 12).fill(.clear)
         }
     }
 }
@@ -583,17 +576,17 @@ private struct MonthPicker: View {
         VStack(spacing: 0) {
             HStack {
                 Button { setYear(max(1900, year - 1)) } label: {
-                    Image(systemName: "chevron.left").frame(width: 32, height: 32)
+                    Image(systemName: "chevron.left").frame(width: 29, height: 29)
                 }
                     .buttonStyle(QingLiIconButtonStyle(palette: palette))
                     .disabled(year <= 1900)
                 Spacer()
                 HStack(spacing: 4) {
                     TextField("年份", text: $yearText)
-                        .font(.system(size: 16, weight: .semibold))
+                        .font(.system(size: 14.4, weight: .semibold))
                         .multilineTextAlignment(.center)
                         .textFieldStyle(.plain)
-                        .frame(width: 77, height: 28)
+                        .frame(width: 69, height: 25)
                         .background(palette.hover, in: RoundedRectangle(cornerRadius: 5))
                         .focused($isYearFieldFocused)
                         .onChange(of: yearText) { _, value in
@@ -611,29 +604,29 @@ private struct MonthPicker: View {
                             }
                         }
                     Text("年")
-                        .font(.system(size: 14, weight: .semibold))
+                        .font(.system(size: 12.6, weight: .semibold))
                 }
                 Spacer()
                 Button { setYear(min(2100, year + 1)) } label: {
-                    Image(systemName: "chevron.right").frame(width: 32, height: 32)
+                    Image(systemName: "chevron.right").frame(width: 29, height: 29)
                 }
                     .buttonStyle(QingLiIconButtonStyle(palette: palette))
                     .disabled(year >= 2100)
             }
-            .padding(.bottom, 15)
-            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 4), spacing: 8) {
+            .padding(.bottom, 14)
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 7), count: 4), spacing: 7) {
                 ForEach(1...12, id: \.self) { month in
                     Button {
                         choose(month)
                     } label: {
                         Text("\(month)月")
-                            .font(.system(size: 14))
+                            .font(.system(size: 12.6))
                             .frame(maxWidth: .infinity)
-                            .padding(.vertical, 11)
+                            .padding(.vertical, 10)
                             .background(
                                 year == displayedMonth.year && month == displayedMonth.month
                                     ? palette.blue : .clear,
-                                in: RoundedRectangle(cornerRadius: 9)
+                                in: RoundedRectangle(cornerRadius: 8)
                             )
                             .foregroundStyle(
                                 year == displayedMonth.year && month == displayedMonth.month
@@ -644,20 +637,20 @@ private struct MonthPicker: View {
                 }
             }
             Text("支持 1900 年 1 月 31 日至 2100 年 12 月 31 日")
-                .font(.system(size: 10))
+                .font(.system(size: 9))
                 .foregroundStyle(palette.muted)
-                .padding(.top, 16)
+                .padding(.top, 14)
         }
         .frame(maxWidth: .infinity)
-        .padding(18)
-        .frame(height: 257, alignment: .top)
-        .background(palette.glass, in: RoundedRectangle(cornerRadius: 15))
-        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 15))
+        .padding(16)
+        .frame(height: 232, alignment: .top)
+        .background(palette.glass, in: RoundedRectangle(cornerRadius: 14))
+        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 14))
         .overlay {
-            RoundedRectangle(cornerRadius: 15)
+            RoundedRectangle(cornerRadius: 14)
                 .stroke(palette.line, lineWidth: 1)
         }
-        .shadow(color: Color(red: 20 / 255, green: 49 / 255, blue: 89 / 255).opacity(0.2), radius: 17.5, y: 10)
+        .shadow(color: Color(red: 20 / 255, green: 49 / 255, blue: 89 / 255).opacity(0.2), radius: 16, y: 9)
         .accessibilityLabel("年月选择器")
     }
 
