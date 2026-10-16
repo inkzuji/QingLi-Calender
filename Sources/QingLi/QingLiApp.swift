@@ -8,6 +8,15 @@ struct QingLiApp: App {
     @StateObject private var holidayData = HolidayDataController()
     @StateObject private var menuBarDate = MenuBarDateController()
 
+    private static let menuBarIcon: NSImage = {
+        guard let image = NSImage(named: "AppIcon")?.copy() as? NSImage else {
+            preconditionFailure("无法加载 App 图标")
+        }
+        image.size = NSSize(width: 22, height: 22)
+        image.isTemplate = false
+        return image
+    }()
+
     init() {
         NSApplication.shared.setActivationPolicy(.accessory)
     }
@@ -16,8 +25,13 @@ struct QingLiApp: App {
         MenuBarExtra {
             QingLiCalendarView(holidayData: holidayData)
         } label: {
-            Label("\(menuBarDate.day)", systemImage: "calendar")
-                .accessibilityLabel("清历，\(menuBarDate.day)日")
+            Label {
+                Text("\(menuBarDate.day)")
+            } icon: {
+                Image(nsImage: Self.menuBarIcon)
+                    .renderingMode(.original)
+            }
+            .accessibilityLabel("清历，\(menuBarDate.day)日")
         }
         .menuBarExtraStyle(.window)
 
