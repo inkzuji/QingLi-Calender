@@ -1,0 +1,69 @@
+{
+  "app_icon_catalog_slots" : 10,
+  "app_icon_integrated" : true,
+  "artwork" : "Approved warm orange calendar, warm white paper, dark 31 and curled corner; no redrawing or creative regeneration.",
+  "candidate_export" : "qingli-apricot-1024.png",
+  "candidate_preview" : "preview.png",
+  "candidate_small_preview" : "qingli-apricot-22.png",
+  "design_candidate_name" : "杏橘翻页",
+  "documentation_copy" : "docs/清历-App图标.png",
+  "export" : "production-1024.png",
+  "export_command" : "swift docs/icon-redesign/apricot/export.swift",
+  "export_method" : "Original straight RGB preserved; retain largest alpha>32 component; normalize alpha with smoothstep(32,224); remove thin attached fringe with 3-source-pixel disk grayscale opening on alpha only; render each size directly from the normalized source with CoreGraphics high-quality interpolation; encode sRGB RGBA PNG.",
+  "export_script" : "export.swift",
+  "generator" : "built-in image_gen",
+  "master" : "source.png",
+  "name" : "暖橙日历",
+  "outputs" : [
+    {
+      "path" : "Sources/QingLi/Assets.xcassets/AppIcon.appiconset/icon_16.png",
+      "sha256" : "eb59ae9779ff4165745c5609c29aa77cf439138272b10fd0b1b33d1467f471ec",
+      "size" : 16
+    },
+    {
+      "path" : "Sources/QingLi/Assets.xcassets/AppIcon.appiconset/icon_32.png",
+      "sha256" : "2170cb0f4d0ee6c45f262609135b56109eb48f86b2931f3ab5499e685b1d118e",
+      "size" : 32
+    },
+    {
+      "path" : "Sources/QingLi/Assets.xcassets/AppIcon.appiconset/icon_64.png",
+      "sha256" : "453b999cb86fa2b473e8b2db5e7d46df683e475ed1e16f7426a029f56b3f725e",
+      "size" : 64
+    },
+    {
+      "path" : "Sources/QingLi/Assets.xcassets/AppIcon.appiconset/icon_128.png",
+      "sha256" : "e3e67bbc3ba85583d424c6691aa0bea31f523f0b8eafdd1111ccb23a9d31b418",
+      "size" : 128
+    },
+    {
+      "path" : "Sources/QingLi/Assets.xcassets/AppIcon.appiconset/icon_256.png",
+      "sha256" : "eeb582c20ac8e4f29d26b55bd62397538a718da1608f1c9040a41333079b2de4",
+      "size" : 256
+    },
+    {
+      "path" : "Sources/QingLi/Assets.xcassets/AppIcon.appiconset/icon_512.png",
+      "sha256" : "404cf33f9b6aec5e9bd4d87325947aca232c70c4bc29002758cf4804005e5681",
+      "size" : 512
+    },
+    {
+      "path" : "Sources/QingLi/Assets.xcassets/AppIcon.appiconset/icon_1024.png",
+      "sha256" : "6234f93a678cf6aa6dc73ea60b51a88cc19efd89781316a3557071db6f219675",
+      "size" : 1024
+    }
+  ],
+  "preview" : "production-preview.png",
+  "production_sha256" : "6234f93a678cf6aa6dc73ea60b51a88cc19efd89781316a3557071db6f219675",
+  "prompt" : "prompt.txt",
+  "reference_role" : "Huaban screenshot as style reference; original design",
+  "references" : [
+    "https://huaban.com/pins/6902442520/",
+    "https://huaban.com/pins/7072718740/"
+  ],
+  "small_preview" : "production-small-preview.png",
+  "source_sha256" : "5634177a55a952dc93151e1d23f39979095f14a9baaa825785f7a5fd9f074956",
+  "source_size" : [
+    1254,
+    1254
+  ],
+  "status" : "production-integrated"
+}

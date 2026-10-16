@@ -9,10 +9,41 @@ struct QingLiApp: App {
     @StateObject private var menuBarDate = MenuBarDateController()
 
     private static let menuBarIcon: NSImage = {
-        guard let image = NSImage(named: "AppIcon")?.copy() as? NSImage else {
-            preconditionFailure("无法加载 App 图标")
+        let image = NSImage(size: NSSize(width: 22, height: 22), flipped: false) { _ in
+            NSGraphicsContext.saveGraphicsState()
+            defer { NSGraphicsContext.restoreGraphicsState() }
+
+            let calendarBody = NSBezierPath(
+                roundedRect: NSRect(x: 2, y: 2, width: 18, height: 18),
+                xRadius: 4,
+                yRadius: 4
+            )
+            calendarBody.addClip()
+            NSColor(calibratedRed: 0.99, green: 0.97, blue: 0.93, alpha: 1).setFill()
+            calendarBody.fill()
+
+            let apricot = NSColor(calibratedRed: 1, green: 0.56, blue: 0.28, alpha: 1)
+            apricot.setFill()
+            NSRect(x: 2, y: 15, width: 18, height: 5).fill()
+
+            for row in 0..<2 {
+                for column in 0..<3 {
+                    let color = row == 0 && column == 2 ? apricot : NSColor.darkGray
+                    color.setFill()
+                    NSBezierPath(
+                        roundedRect: NSRect(
+                            x: 5 + CGFloat(column) * 4,
+                            y: 5 + CGFloat(row) * 5,
+                            width: 3,
+                            height: 3
+                        ),
+                        xRadius: 0.7,
+                        yRadius: 0.7
+                    ).fill()
+                }
+            }
+            return true
         }
-        image.size = NSSize(width: 22, height: 22)
         image.isTemplate = false
         return image
     }()
