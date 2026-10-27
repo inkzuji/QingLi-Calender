@@ -122,6 +122,24 @@ final class MenuBarDateController: NSObject, ObservableObject {
     }
 }
 
+private struct MenuBarWindowBackground: NSViewRepresentable {
+    final class WindowView: NSView {
+        override func viewDidMoveToWindow() {
+            super.viewDidMoveToWindow()
+            guard let window else { return }
+            // 圆角外由窗口透出桌面，避免系统底色在内容四角露出。
+            window.backgroundColor = .clear
+            window.isOpaque = false
+        }
+    }
+
+    func makeNSView(context: Context) -> WindowView {
+        WindowView()
+    }
+
+    func updateNSView(_ nsView: WindowView, context: Context) {}
+}
+
 struct QingLiCalendarView: View {
     private enum FocusTarget: Hashable {
         case monthTitle
@@ -156,6 +174,8 @@ struct QingLiCalendarView: View {
     private var palette: QingLiPalette { QingLiPalette(colorScheme: colorScheme) }
 
     var body: some View {
+        let panelShape = RoundedRectangle(cornerRadius: 5)
+
         ZStack(alignment: .top) {
             VStack(spacing: 0) {
                 header
@@ -191,13 +211,14 @@ struct QingLiCalendarView: View {
         .frame(width: 436, height: 542, alignment: .top)
         .background(palette.glass)
         .background(.ultraThinMaterial)
-        .clipShape(RoundedRectangle(cornerRadius: 18))
+        .clipShape(panelShape)
         .overlay {
-            RoundedRectangle(cornerRadius: 18)
+            panelShape
                 .stroke(palette.border, lineWidth: 1)
         }
         .shadow(color: Color(red: 31 / 255, green: 66 / 255, blue: 108 / 255).opacity(0.18), radius: 32, y: 14)
         .shadow(color: Color(red: 17 / 255, green: 55 / 255, blue: 90 / 255).opacity(0.07), radius: 4, y: 2)
+        .background(MenuBarWindowBackground().allowsHitTesting(false))
         .onKeyPress { press in
             guard press.modifiers.contains(.control),
                   !press.modifiers.contains(.command),
