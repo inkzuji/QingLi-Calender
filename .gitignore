@@ -36,3 +36,19 @@ Secrets.xcconfig
 
 # 发布产物
 release/
+
+# 本地应用和扩展产物
+*.app/
+*.appex/
+
+# 本地工作资料
+/.local/
+
+# 图标导出产物及设计候选
+/docs/icon-redesign/apricot/production-1024.png
+/docs/icon-redesign/apricot/production-preview.png
+/docs/icon-redesign/apricot/production-small-preview.png
+/docs/icon-redesign/apricot/preview.png
+/docs/icon-redesign/apricot/qingli-apricot-1024.png
+/docs/icon-redesign/apricot/qingli-apricot-22.png
+/docs/清历-App图标.png

@@ -162,6 +162,8 @@ let manifest: [String: Any] = [
     "generator": "built-in image_gen",
     "reference_role": "Huaban screenshot as style reference; original design",
     "references": ["https://huaban.com/pins/6902442520/", "https://huaban.com/pins/7072718740/"],
+    "local_candidate_note": "Candidate images are local design records.",
+    "local_export_note": "Run export_command to recreate the ignored production images and documentation copy.",
     "master": "source.png",
     "source_sha256": try checksum(sourceURL),
     "source_size": [original.width, original.height],

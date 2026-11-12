@@ -12,6 +12,8 @@
   "export_method" : "Original straight RGB preserved; retain largest alpha>32 component; normalize alpha with smoothstep(32,224); remove thin attached fringe with 3-source-pixel disk grayscale opening on alpha only; render each size directly from the normalized source with CoreGraphics high-quality interpolation; encode sRGB RGBA PNG.",
   "export_script" : "export.swift",
   "generator" : "built-in image_gen",
+  "local_candidate_note" : "Candidate images are local design records.",
+  "local_export_note" : "Run export_command to recreate the ignored production images and documentation copy.",
   "master" : "source.png",
   "name" : "暖橙日历",
   "outputs" : [
