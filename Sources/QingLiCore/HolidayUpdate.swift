@@ -130,41 +130,61 @@ public struct HolidayUpdateMetadataStore: HolidayUpdateMetadataStoring, Sendable
 /// App 与小组件共用的完整节假日数据集文件。
 public struct HolidayDatasetStore: HolidayDatasetStoring, Sendable {
     public static let appGroupIdentifier = "group.com.qingli.app"
-    public static let filename = "holiday-dataset.json"
+    public static let filename = "holiday-dataset-v2.json"
+    public static let legacyFilename = "holiday-dataset.json"
 
     public let fileURL: URL
+    private let legacyFileURL: URL?
 
-    public init(fileURL: URL) {
+    public init(fileURL: URL, legacyFileURL: URL? = nil) {
         self.fileURL = fileURL
+        self.legacyFileURL = legacyFileURL
     }
 
     public static func appGroup(fileManager: FileManager = .default) throws -> HolidayDatasetStore {
         guard let directory = fileManager.containerURL(forSecurityApplicationGroupIdentifier: appGroupIdentifier) else {
             throw HolidayUpdateError.unavailableSharedContainer
         }
-        return HolidayDatasetStore(fileURL: directory.appendingPathComponent(filename, isDirectory: false))
+        return HolidayDatasetStore(
+            fileURL: directory.appendingPathComponent(filename, isDirectory: false),
+            legacyFileURL: directory.appendingPathComponent(legacyFilename, isDirectory: false)
+        )
     }
 
     public func loadCached() throws -> HolidayDataset? {
-        guard FileManager.default.fileExists(atPath: fileURL.path) else { return nil }
-        let data = try Data(contentsOf: fileURL)
-        let dataset = try JSONDecoder().decode(HolidayDataset.self, from: data)
-        try HolidayDatasetValidator.validate(dataset)
-        return dataset
+        guard let legacyFileURL else { return try load(fileURL) }
+        if let current = try? load(fileURL, schemaVersion: 2) {
+            return current
+        }
+        return try load(legacyFileURL, schemaVersion: 1)
     }
 
     public func save(_ dataset: HolidayDataset) throws {
         try HolidayDatasetValidator.validate(dataset)
+        let current = dataset.migrated()
         let directory = fileURL.deletingLastPathComponent()
         try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
         let encoder = JSONEncoder()
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
-        try encoder.encode(dataset).write(to: fileURL, options: .atomic)
+        try encoder.encode(current).write(to: fileURL, options: .atomic)
+    }
+
+    private func load(_ url: URL, schemaVersion: Int? = nil) throws -> HolidayDataset? {
+        guard FileManager.default.fileExists(atPath: url.path) else { return nil }
+        let dataset = try JSONDecoder().decode(HolidayDataset.self, from: Data(contentsOf: url))
+        if let schemaVersion, dataset.schemaVersion != schemaVersion {
+            throw HolidayUpdateError.invalidDataset("文件版本与预期不符")
+        }
+        try HolidayDatasetValidator.validate(dataset)
+        return dataset
     }
 }
 
 public enum HolidayDatasetValidator {
     public static func validate(_ dataset: HolidayDataset) throws {
+        guard (1...2).contains(dataset.schemaVersion) else {
+            throw HolidayUpdateError.invalidDataset("不支持的文件版本")
+        }
         guard !dataset.version.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
             throw HolidayUpdateError.invalidDataset("版本不能为空")
         }
@@ -172,16 +192,10 @@ public enum HolidayDatasetValidator {
         guard !years.isEmpty, years.count == dataset.coveredYears.count else {
             throw HolidayUpdateError.invalidDataset("覆盖年份不能为空且不能重复")
         }
-        let noticeYears = Set(dataset.notices.map(\.year))
-        guard noticeYears == years, dataset.notices.count == noticeYears.count else {
-            throw HolidayUpdateError.invalidDataset("通知年份与覆盖年份不一致")
-        }
-        for notice in dataset.notices {
-            try HolidayOfficialURL.validate(notice.sourceURL)
-            guard !notice.title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
-                  !notice.publishedAt.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-                throw HolidayUpdateError.invalidDataset("通知信息不完整")
-            }
+        if dataset.schemaVersion == 1 {
+            try validateLegacyNotices(dataset.notices, years: years)
+        } else {
+            try validateYearSources(dataset.yearSources, years: years)
         }
         var dates = Set<CivilDate>()
         for record in dataset.records {
@@ -197,6 +211,47 @@ public enum HolidayDatasetValidator {
             guard dates.insert(record.date).inserted else {
                 throw HolidayUpdateError.invalidDataset("存在重复日期 \(record.date)")
             }
+        }
+    }
+
+    private static func validateLegacyNotices(_ notices: [HolidayNotice], years: Set<Int>) throws {
+        let noticeYears = Set(notices.map(\.year))
+        guard noticeYears == years, notices.count == noticeYears.count else {
+            throw HolidayUpdateError.invalidDataset("通知年份与覆盖年份不一致")
+        }
+        for notice in notices {
+            try HolidayOfficialURL.validate(notice.sourceURL)
+            try validateNoticeText(notice)
+        }
+    }
+
+    private static func validateYearSources(_ sources: [Int: HolidayYearSource], years: Set<Int>) throws {
+        guard Set(sources.keys) == years else {
+            throw HolidayUpdateError.invalidDataset("来源年份与覆盖年份不一致")
+        }
+        for (year, source) in sources {
+            guard !source.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+                throw HolidayUpdateError.invalidDataset("订阅来源名称不能为空")
+            }
+            for url in [source.requestURL, source.finalURL].compactMap({ $0 }) {
+                guard (try? HolidaySubscription.validateHTTPS(url)) != nil else {
+                    throw HolidayUpdateError.invalidDataset("订阅来源地址无效")
+                }
+            }
+            if let notice = source.officialNotice {
+                guard notice.year == year else {
+                    throw HolidayUpdateError.invalidDataset("通知年份与来源年份不一致")
+                }
+                try HolidayOfficialURL.validateGovernmentNotice(notice.sourceURL)
+                try validateNoticeText(notice)
+            }
+        }
+    }
+
+    private static func validateNoticeText(_ notice: HolidayNotice) throws {
+        guard !notice.title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+              !notice.publishedAt.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            throw HolidayUpdateError.invalidDataset("通知信息不完整")
         }
     }
 
@@ -333,13 +388,17 @@ public enum ICloudHolidayCalendarURL {
 /// 为兼容内置历史数据与 iCloud 更新记录而保留的来源校验入口。
 public enum HolidayOfficialURL {
     public static func validate(_ url: URL) throws {
-        if url.scheme?.lowercased() == "https",
-           url.host?.lowercased() == "www.gov.cn",
-           url.path.hasPrefix("/zhengce/zhengceku/"),
-           url.path.lowercased().contains("content_") {
-            return
-        }
+        if (try? validateGovernmentNotice(url)) != nil { return }
         try ICloudHolidayCalendarURL.validate(url)
+    }
+
+    static func validateGovernmentNotice(_ url: URL) throws {
+        guard url.scheme?.lowercased() == "https",
+              url.host?.lowercased() == "www.gov.cn",
+              url.path.hasPrefix("/zhengce/zhengceku/"),
+              url.path.lowercased().contains("content_") else {
+            throw HolidayUpdateError.invalidDataset("官方通知地址无效")
+        }
     }
 }
 

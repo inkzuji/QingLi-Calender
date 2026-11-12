@@ -59,7 +59,7 @@ struct QingLiWidgetView: View {
 
     init(entry: QingLiTimelineEntry) {
         self.entry = entry
-        dateService = WidgetHolidayDatasetLoader.makeDateService()
+        dateService = QingLiDateService()
     }
 
     var body: some View {
@@ -140,33 +140,6 @@ private struct WidgetPalette {
             glass = Color(red: 245 / 255, green: 250 / 255, blue: 255 / 255, opacity: 0.87)
             border = Color.white.opacity(0.56)
         }
-    }
-}
-
-/// 小组件与主 App 共享的节假日数据文件。
-///
-/// 主 App 在用户确认更新后，将校验完成的完整 `HolidayDataset` 原子写入
-/// App Group 容器根目录的 `holiday-dataset.json`，随后调用
-/// `WidgetCenter.shared.reloadTimelines(ofKind: "QingLiWidgetV2")` 刷新本小组件。
-private enum WidgetHolidayDatasetLoader {
-    private static let appGroupIdentifier = "group.com.qingli.app"
-    private static let datasetFileName = "holiday-dataset.json"
-
-    static func makeDateService() -> QingLiDateService {
-        guard let containerURL = FileManager.default.containerURL(
-            forSecurityApplicationGroupIdentifier: appGroupIdentifier
-        ) else {
-            return QingLiDateService()
-        }
-
-        let datasetURL = containerURL.appending(path: datasetFileName)
-        guard let data = try? Data(contentsOf: datasetURL),
-              let dataset = try? JSONDecoder().decode(HolidayDataset.self, from: data),
-              (try? HolidayDatasetValidator.validate(dataset)) != nil else {
-            return QingLiDateService()
-        }
-
-        return QingLiDateService(holidayProvider: HolidayProvider(dataset: dataset))
     }
 }
 
