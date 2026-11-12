@@ -8,33 +8,49 @@
 
 /* Begin PBXBuildFile section */
 		02F3D97853743FD3DEE2F5D6 /* QingLiWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8C0074BB3D2FCC11B0B17 /* QingLiWidget.swift */; };
-		09D382BB94F3F5B269F190EB /* CalendarEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53380BC49D500E25015A0A9 /* CalendarEngine.swift */; };
+		04DEB47DA8AA5E2121B543F9 /* HolidayDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EDAD273C5C7D24491A4948 /* HolidayDataController.swift */; };
+		099219806F69334C242971F8 /* HolidayProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D868A098F2F8920E6B92F /* HolidayProvider.swift */; };
+		100366A3CE1B59C6014F3FC4 /* HolidayCalendarUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC4DC9FFAD2D884DB9B3771 /* HolidayCalendarUpdater.swift */; };
+		100D4D9881229840524CD4D0 /* CalendarEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE17776571707940A95512 /* CalendarEngine.swift */; };
 		1636216B20A773441DC1C721 /* libQingLiCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0152752A4A68933F1C6D849 /* libQingLiCore.a */; };
-		1D2DCF0481700F9DD3B6ED3B /* CivilDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D3E520A2D1683B1BC949B7 /* CivilDate.swift */; };
+		1A490CDE2736AC1779143205 /* QingLiPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8A6221CE15A69F3D5BBF3 /* QingLiPalette.swift */; };
+		2128051C453B0209C0268605 /* DesktopCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4361E77628A832D0DC29042 /* DesktopCalendarView.swift */; };
 		28398F71FA766612C61CA27F /* HolidayDataControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4426A8F586DD696A1C772A61 /* HolidayDataControllerTests.swift */; };
 		29BAEDDEF22CB2DDCCF14A55 /* LunarCore in Frameworks */ = {isa = PBXBuildFile; productRef = 0EB2A8E4BA188B540492A4C2 /* LunarCore */; };
-		374DC4A05FD3ED27492292AC /* HolidaySubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45C20191A66886D60254060 /* HolidaySubscriptionView.swift */; };
-		39440562E99D0EF910C95A8E /* HolidayProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE66BD403F13151F9E944DF /* HolidayProvider.swift */; };
+		2AEE940CC5C0A9887BFB2161 /* HolidayICSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4124C9DD3B64F324BF984180 /* HolidayICSParser.swift */; };
 		3947F17207A288EB3CE6055F /* QingLiCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008E432CC96B3EEF2CF2C85A /* QingLiCoreTests.swift */; };
+		3E38E274F17AD8B17FD01FB2 /* QingLiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F756B503CE2D6B971C9797C8 /* QingLiApp.swift */; };
+		47A43084735F787D330AB207 /* SubscriptionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B571F0EB738548FBD636BD57 /* SubscriptionStyle.swift */; };
 		47F0A225B32F6FBC8511F770 /* holidays.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F17D056549035DF924009A7 /* holidays.json */; };
-		4F59A35CEC67D942027AE039 /* DateFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37BEEDF78704D105E2EA08F /* DateFormatting.swift */; };
 		51C706095002B40C6114E0BA /* HolidayDatasetStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB165B65EDE5EC52046A272 /* HolidayDatasetStoreTests.swift */; };
-		55DE9262EE64067335D61B77 /* QingLiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69248F201B6BEC9D70BFA84 /* QingLiApp.swift */; };
+		52710A0E9F9F8DCF48C18F5D /* MonthPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9606D48051C6597696E63354 /* MonthPicker.swift */; };
+		58BC106CB6C9D23E0FDAEB91 /* QingLiCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8F7514AB1719086A04950F /* QingLiCalendarView.swift */; };
+		5FEB2F3799CD6D43873117CB /* DateFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489CCF56BB5F698D1F34C23 /* DateFormatting.swift */; };
+		6B47BC556D64399FA8071B74 /* DesktopDateBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540D465FD872F06B995B1706 /* DesktopDateBrowser.swift */; };
 		6D07D6A2023389DF18685BA0 /* holidays.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F17D056549035DF924009A7 /* holidays.json */; };
 		6D69E95F36963889490F3BDC /* HolidaySubscriptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7894C7EB39F178210EDB76CF /* HolidaySubscriptionTests.swift */; };
+		84262AFF765F8B5D312794CB /* QingLiAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7280D070A8139C27612989AD /* QingLiAppDelegate.swift */; };
 		862BC62593FA2FA73447341C /* libQingLiCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0152752A4A68933F1C6D849 /* libQingLiCore.a */; };
 		9C0D7DE563A1077A4052B83C /* holidays.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F17D056549035DF924009A7 /* holidays.json */; };
+		9C82C029AE55492151D7DD61 /* LunarProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B82D6194820B5891BF6CF35 /* LunarProvider.swift */; };
+		9CD9059BE7153CD786A1E2E9 /* HolidayUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D0B4C50046BC598E57830E /* HolidayUpdate.swift */; };
+		9CE2D7D5D510FD11D46F8E74 /* DesktopNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EB688E519FECC19603F87 /* DesktopNavigation.swift */; };
 		AC492BD404E00DB858356BB1 /* QingLiWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B4053E0D86C532BDE75119BB /* QingLiWidgetExtension.appex */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B94E102B457AF087EF351A47 /* LunarProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608EAF512168942263020284 /* LunarProvider.swift */; };
+		B3990079B5AFFFB5874AF064 /* DesktopHolidayOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A4A5B104E63AF3013C2D61 /* DesktopHolidayOverview.swift */; };
+		B6C1C1E3392132CFA398DF8C /* HolidayDatasetStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3329876E80DC30B16FBB08B3 /* HolidayDatasetStore.swift */; };
 		B99AF223A2CDB8CF61FE12F1 /* LunarCore in Frameworks */ = {isa = PBXBuildFile; productRef = 06FDE74D4FCB6F93E31E73B3 /* LunarCore */; };
-		BBBC955770F4CEB96637B2D0 /* DesktopCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3611A38E6C0BA5D62D834DB /* DesktopCalendarView.swift */; };
-		C845F32E9C134B095F89185F /* HolidayUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C7DB050875BDA9039E3324 /* HolidayUpdate.swift */; };
+		BE6A7C1DE066F681E910E103 /* SubscriptionPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53F0564D3A49C46341AE611 /* SubscriptionPreviewView.swift */; };
+		C7B0803AB9BDCCE5B455BE4C /* HolidayDatasetValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C0AA904469CFF6BBAB5142 /* HolidayDatasetValidator.swift */; };
+		C82662FDDD039B75480EBE99 /* QingLiIconButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362ED5D51B40D25694CAC2A /* QingLiIconButtonStyle.swift */; };
 		CC0758B76806471B57A1B70E /* libQingLiCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0152752A4A68933F1C6D849 /* libQingLiCore.a */; };
+		CFA6524E2CDC5264585E0992 /* MenuBarDateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDF244B31B2D9EA95215A9 /* MenuBarDateController.swift */; };
 		E18B90BBBD44093EF23D6352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7B8234A6E539BDD94C4E4CB /* Assets.xcassets */; };
-		E5E6E503821E2221E9B6BF93 /* HolidayCalendarUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE79102A2FE25A11228312D /* HolidayCalendarUpdater.swift */; };
+		E2DBF2F34201BB1CDA274E5F /* DesktopStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1BE3FF8AF02DC5806258F /* DesktopStyle.swift */; };
 		E93A5417767E4D2F3FE74BDA /* LunarCore in Frameworks */ = {isa = PBXBuildFile; productRef = 0273DD7BABE1B5E2B5B79639 /* LunarCore */; };
+		EBE917D9A5301BA57EFE3B92 /* HolidaySubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E640DA96BF6887E2E305DA /* HolidaySubscriptionView.swift */; };
 		EC3F1596979694392DBCC597 /* MenuBarDateControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D5CDCEED70EC5302E8870A /* MenuBarDateControllerTests.swift */; };
-		F1291C116CB55558E1AE0B32 /* HolidayICSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27606CA691594277B898C80 /* HolidayICSParser.swift */; };
+		F66D4A541BF23B06485D30FE /* CivilDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16CB8AF852FE521126ACD3B /* CivilDate.swift */; };
+		F7773F36C742A032341080DB /* ICloudHolidayCalendarUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8506E78DF3093D46D61391 /* ICloudHolidayCalendarUpdater.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,31 +107,47 @@
 
 /* Begin PBXFileReference section */
 		008E432CC96B3EEF2CF2C85A /* QingLiCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QingLiCoreTests.swift; sourceTree = "<group>"; };
+		00AE17776571707940A95512 /* CalendarEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEngine.swift; sourceTree = "<group>"; };
+		09EDAD273C5C7D24491A4948 /* HolidayDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayDataController.swift; sourceTree = "<group>"; };
 		1061FCF0A16E7CB11CE0025A /* QingLi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QingLi.entitlements; sourceTree = "<group>"; };
 		19D5CDCEED70EC5302E8870A /* MenuBarDateControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarDateControllerTests.swift; sourceTree = "<group>"; };
 		29845705058684D38DFD92EF /* QingLiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QingLiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CE1BE3FF8AF02DC5806258F /* DesktopStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesktopStyle.swift; sourceTree = "<group>"; };
 		2EB165B65EDE5EC52046A272 /* HolidayDatasetStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayDatasetStoreTests.swift; sourceTree = "<group>"; };
 		30ED36B827CA6FCAC80AFC10 /* QingLiWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QingLiWidgetExtension.entitlements; sourceTree = "<group>"; };
+		3329876E80DC30B16FBB08B3 /* HolidayDatasetStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayDatasetStore.swift; sourceTree = "<group>"; };
+		4124C9DD3B64F324BF984180 /* HolidayICSParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayICSParser.swift; sourceTree = "<group>"; };
+		4362ED5D51B40D25694CAC2A /* QingLiIconButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QingLiIconButtonStyle.swift; sourceTree = "<group>"; };
 		4426A8F586DD696A1C772A61 /* HolidayDataControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayDataControllerTests.swift; sourceTree = "<group>"; };
-		608EAF512168942263020284 /* LunarProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarProvider.swift; sourceTree = "<group>"; };
-		61C7DB050875BDA9039E3324 /* HolidayUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayUpdate.swift; sourceTree = "<group>"; };
-		66D3E520A2D1683B1BC949B7 /* CivilDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivilDate.swift; sourceTree = "<group>"; };
+		540D465FD872F06B995B1706 /* DesktopDateBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesktopDateBrowser.swift; sourceTree = "<group>"; };
 		6F17D056549035DF924009A7 /* holidays.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = holidays.json; sourceTree = "<group>"; };
-		6FE79102A2FE25A11228312D /* HolidayCalendarUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayCalendarUpdater.swift; sourceTree = "<group>"; };
 		713F53F2A7EE703C5B470FD6 /* QingLiCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QingLiCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7280D070A8139C27612989AD /* QingLiAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QingLiAppDelegate.swift; sourceTree = "<group>"; };
+		756EB688E519FECC19603F87 /* DesktopNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesktopNavigation.swift; sourceTree = "<group>"; };
 		7894C7EB39F178210EDB76CF /* HolidaySubscriptionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaySubscriptionTests.swift; sourceTree = "<group>"; };
+		79A4A5B104E63AF3013C2D61 /* DesktopHolidayOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesktopHolidayOverview.swift; sourceTree = "<group>"; };
+		897D868A098F2F8920E6B92F /* HolidayProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayProvider.swift; sourceTree = "<group>"; };
+		8B82D6194820B5891BF6CF35 /* LunarProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarProvider.swift; sourceTree = "<group>"; };
+		92D0B4C50046BC598E57830E /* HolidayUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayUpdate.swift; sourceTree = "<group>"; };
+		9489CCF56BB5F698D1F34C23 /* DateFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatting.swift; sourceTree = "<group>"; };
+		9606D48051C6597696E63354 /* MonthPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPicker.swift; sourceTree = "<group>"; };
+		97C0AA904469CFF6BBAB5142 /* HolidayDatasetValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayDatasetValidator.swift; sourceTree = "<group>"; };
 		9CB8C0074BB3D2FCC11B0B17 /* QingLiWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QingLiWidget.swift; sourceTree = "<group>"; };
-		9CE66BD403F13151F9E944DF /* HolidayProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayProvider.swift; sourceTree = "<group>"; };
-		B3611A38E6C0BA5D62D834DB /* DesktopCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesktopCalendarView.swift; sourceTree = "<group>"; };
 		B4053E0D86C532BDE75119BB /* QingLiWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QingLiWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		B53380BC49D500E25015A0A9 /* CalendarEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEngine.swift; sourceTree = "<group>"; };
-		D27606CA691594277B898C80 /* HolidayICSParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayICSParser.swift; sourceTree = "<group>"; };
-		D37BEEDF78704D105E2EA08F /* DateFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatting.swift; sourceTree = "<group>"; };
+		B571F0EB738548FBD636BD57 /* SubscriptionStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionStyle.swift; sourceTree = "<group>"; };
+		BAC4DC9FFAD2D884DB9B3771 /* HolidayCalendarUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayCalendarUpdater.swift; sourceTree = "<group>"; };
+		C1E640DA96BF6887E2E305DA /* HolidaySubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaySubscriptionView.swift; sourceTree = "<group>"; };
+		C53F0564D3A49C46341AE611 /* SubscriptionPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionPreviewView.swift; sourceTree = "<group>"; };
+		CCDDF244B31B2D9EA95215A9 /* MenuBarDateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarDateController.swift; sourceTree = "<group>"; };
 		E0152752A4A68933F1C6D849 /* libQingLiCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libQingLiCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E06B7B8D3E4698E4A0F0E7FB /* QingLi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QingLi.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E45C20191A66886D60254060 /* HolidaySubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaySubscriptionView.swift; sourceTree = "<group>"; };
+		E16CB8AF852FE521126ACD3B /* CivilDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivilDate.swift; sourceTree = "<group>"; };
+		E4361E77628A832D0DC29042 /* DesktopCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesktopCalendarView.swift; sourceTree = "<group>"; };
 		E7B8234A6E539BDD94C4E4CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F69248F201B6BEC9D70BFA84 /* QingLiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QingLiApp.swift; sourceTree = "<group>"; };
+		EEE8A6221CE15A69F3D5BBF3 /* QingLiPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QingLiPalette.swift; sourceTree = "<group>"; };
+		F756B503CE2D6B971C9797C8 /* QingLiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QingLiApp.swift; sourceTree = "<group>"; };
+		FC8506E78DF3093D46D61391 /* ICloudHolidayCalendarUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICloudHolidayCalendarUpdater.swift; sourceTree = "<group>"; };
+		FE8F7514AB1719086A04950F /* QingLiCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QingLiCalendarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +203,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		36D3200E4FD4F1A2567FAC14 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F756B503CE2D6B971C9797C8 /* QingLiApp.swift */,
+				7280D070A8139C27612989AD /* QingLiAppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		52AF6E3EA5472872C8CDC238 = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +223,41 @@
 				991B12B5AB46041C1746FB6D /* Resources */,
 				1C57727DF5602A3EF4468A00 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		660B9E1594533571A6D3700A /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				09EDAD273C5C7D24491A4948 /* HolidayDataController.swift */,
+				C1E640DA96BF6887E2E305DA /* HolidaySubscriptionView.swift */,
+				C53F0564D3A49C46341AE611 /* SubscriptionPreviewView.swift */,
+				B571F0EB738548FBD636BD57 /* SubscriptionStyle.swift */,
+			);
+			path = Subscription;
+			sourceTree = "<group>";
+		};
+		7BDB87370CA5EC09FECF32CB /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				9606D48051C6597696E63354 /* MonthPicker.swift */,
+				4362ED5D51B40D25694CAC2A /* QingLiIconButtonStyle.swift */,
+				EEE8A6221CE15A69F3D5BBF3 /* QingLiPalette.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		8E5FDEC0A117D612CA8644E3 /* Holidays */ = {
+			isa = PBXGroup;
+			children = (
+				BAC4DC9FFAD2D884DB9B3771 /* HolidayCalendarUpdater.swift */,
+				3329876E80DC30B16FBB08B3 /* HolidayDatasetStore.swift */,
+				97C0AA904469CFF6BBAB5142 /* HolidayDatasetValidator.swift */,
+				4124C9DD3B64F324BF984180 /* HolidayICSParser.swift */,
+				897D868A098F2F8920E6B92F /* HolidayProvider.swift */,
+				92D0B4C50046BC598E57830E /* HolidayUpdate.swift */,
+				FC8506E78DF3093D46D61391 /* ICloudHolidayCalendarUpdater.swift */,
+			);
+			path = Holidays;
 			sourceTree = "<group>";
 		};
 		991B12B5AB46041C1746FB6D /* Resources */ = {
@@ -197,13 +273,24 @@
 			isa = PBXGroup;
 			children = (
 				E7B8234A6E539BDD94C4E4CB /* Assets.xcassets */,
-				B3611A38E6C0BA5D62D834DB /* DesktopCalendarView.swift */,
-				E45C20191A66886D60254060 /* HolidaySubscriptionView.swift */,
 				1061FCF0A16E7CB11CE0025A /* QingLi.entitlements */,
-				F69248F201B6BEC9D70BFA84 /* QingLiApp.swift */,
+				36D3200E4FD4F1A2567FAC14 /* App */,
+				F72BAD630CCDF3B68A78E7BF /* Desktop */,
+				AC84AC5F38B63E393178620B /* MenuBar */,
+				7BDB87370CA5EC09FECF32CB /* Shared */,
+				660B9E1594533571A6D3700A /* Subscription */,
 			);
 			name = QingLi;
 			path = Sources/QingLi;
+			sourceTree = "<group>";
+		};
+		AC84AC5F38B63E393178620B /* MenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				CCDDF244B31B2D9EA95215A9 /* MenuBarDateController.swift */,
+				FE8F7514AB1719086A04950F /* QingLiCalendarView.swift */,
+			);
+			path = MenuBar;
 			sourceTree = "<group>";
 		};
 		CB722F0FB43C925A62E24FBA /* QingLiCoreTests */ = {
@@ -215,6 +302,17 @@
 			);
 			name = QingLiCoreTests;
 			path = Tests/QingLiCoreTests;
+			sourceTree = "<group>";
+		};
+		E0433B07F47D0A83FFF019CF /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				00AE17776571707940A95512 /* CalendarEngine.swift */,
+				E16CB8AF852FE521126ACD3B /* CivilDate.swift */,
+				9489CCF56BB5F698D1F34C23 /* DateFormatting.swift */,
+				8B82D6194820B5891BF6CF35 /* LunarProvider.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		E886B20C9ED7C70BDB3674E7 /* QingLiWidgetExtension */ = {
@@ -230,17 +328,23 @@
 		ECA84B6DAA418764A6C0DC96 /* QingLiCore */ = {
 			isa = PBXGroup;
 			children = (
-				B53380BC49D500E25015A0A9 /* CalendarEngine.swift */,
-				66D3E520A2D1683B1BC949B7 /* CivilDate.swift */,
-				D37BEEDF78704D105E2EA08F /* DateFormatting.swift */,
-				6FE79102A2FE25A11228312D /* HolidayCalendarUpdater.swift */,
-				D27606CA691594277B898C80 /* HolidayICSParser.swift */,
-				9CE66BD403F13151F9E944DF /* HolidayProvider.swift */,
-				61C7DB050875BDA9039E3324 /* HolidayUpdate.swift */,
-				608EAF512168942263020284 /* LunarProvider.swift */,
+				E0433B07F47D0A83FFF019CF /* Calendar */,
+				8E5FDEC0A117D612CA8644E3 /* Holidays */,
 			);
 			name = QingLiCore;
 			path = Sources/QingLiCore;
+			sourceTree = "<group>";
+		};
+		F72BAD630CCDF3B68A78E7BF /* Desktop */ = {
+			isa = PBXGroup;
+			children = (
+				E4361E77628A832D0DC29042 /* DesktopCalendarView.swift */,
+				540D465FD872F06B995B1706 /* DesktopDateBrowser.swift */,
+				79A4A5B104E63AF3013C2D61 /* DesktopHolidayOverview.swift */,
+				756EB688E519FECC19603F87 /* DesktopNavigation.swift */,
+				2CE1BE3FF8AF02DC5806258F /* DesktopStyle.swift */,
+			);
+			path = Desktop;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -474,14 +578,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09D382BB94F3F5B269F190EB /* CalendarEngine.swift in Sources */,
-				1D2DCF0481700F9DD3B6ED3B /* CivilDate.swift in Sources */,
-				4F59A35CEC67D942027AE039 /* DateFormatting.swift in Sources */,
-				E5E6E503821E2221E9B6BF93 /* HolidayCalendarUpdater.swift in Sources */,
-				F1291C116CB55558E1AE0B32 /* HolidayICSParser.swift in Sources */,
-				39440562E99D0EF910C95A8E /* HolidayProvider.swift in Sources */,
-				C845F32E9C134B095F89185F /* HolidayUpdate.swift in Sources */,
-				B94E102B457AF087EF351A47 /* LunarProvider.swift in Sources */,
+				100D4D9881229840524CD4D0 /* CalendarEngine.swift in Sources */,
+				F66D4A541BF23B06485D30FE /* CivilDate.swift in Sources */,
+				5FEB2F3799CD6D43873117CB /* DateFormatting.swift in Sources */,
+				100366A3CE1B59C6014F3FC4 /* HolidayCalendarUpdater.swift in Sources */,
+				B6C1C1E3392132CFA398DF8C /* HolidayDatasetStore.swift in Sources */,
+				C7B0803AB9BDCCE5B455BE4C /* HolidayDatasetValidator.swift in Sources */,
+				2AEE940CC5C0A9887BFB2161 /* HolidayICSParser.swift in Sources */,
+				099219806F69334C242971F8 /* HolidayProvider.swift in Sources */,
+				9CD9059BE7153CD786A1E2E9 /* HolidayUpdate.swift in Sources */,
+				F7773F36C742A032341080DB /* ICloudHolidayCalendarUpdater.swift in Sources */,
+				9C82C029AE55492151D7DD61 /* LunarProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,9 +596,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBBC955770F4CEB96637B2D0 /* DesktopCalendarView.swift in Sources */,
-				374DC4A05FD3ED27492292AC /* HolidaySubscriptionView.swift in Sources */,
-				55DE9262EE64067335D61B77 /* QingLiApp.swift in Sources */,
+				2128051C453B0209C0268605 /* DesktopCalendarView.swift in Sources */,
+				6B47BC556D64399FA8071B74 /* DesktopDateBrowser.swift in Sources */,
+				B3990079B5AFFFB5874AF064 /* DesktopHolidayOverview.swift in Sources */,
+				9CE2D7D5D510FD11D46F8E74 /* DesktopNavigation.swift in Sources */,
+				E2DBF2F34201BB1CDA274E5F /* DesktopStyle.swift in Sources */,
+				04DEB47DA8AA5E2121B543F9 /* HolidayDataController.swift in Sources */,
+				EBE917D9A5301BA57EFE3B92 /* HolidaySubscriptionView.swift in Sources */,
+				CFA6524E2CDC5264585E0992 /* MenuBarDateController.swift in Sources */,
+				52710A0E9F9F8DCF48C18F5D /* MonthPicker.swift in Sources */,
+				3E38E274F17AD8B17FD01FB2 /* QingLiApp.swift in Sources */,
+				84262AFF765F8B5D312794CB /* QingLiAppDelegate.swift in Sources */,
+				58BC106CB6C9D23E0FDAEB91 /* QingLiCalendarView.swift in Sources */,
+				C82662FDDD039B75480EBE99 /* QingLiIconButtonStyle.swift in Sources */,
+				1A490CDE2736AC1779143205 /* QingLiPalette.swift in Sources */,
+				BE6A7C1DE066F681E910E103 /* SubscriptionPreviewView.swift in Sources */,
+				47A43084735F787D330AB207 /* SubscriptionStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
